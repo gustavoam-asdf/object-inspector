@@ -2,8 +2,9 @@
 	"compilerOptions": {
 		"target": "ES6",
 		"moduleResolution": "node",
-		"module": "ESNext",
+		"module": "CommonJS",
 		"strict": true,
+		"rootDir": "./lib",
 		"outDir": "build",
 		"esModuleInterop": true,
 		"useDefineForClassFields": true,
@@ -16,11 +17,7 @@
 		"experimentalDecorators": true,
 		"forceConsistentCasingInFileNames": true,
 		"noEmitOnError": true,
-		"rootDir": "./",
-		"baseUrl": "./",
-		"paths": {
-			"@*": ["./lib/*"]
-		}
+		"baseUrl": "./"
 	},
 	"include": ["lib"],
 	"exclude": ["node_modules", "build"]
