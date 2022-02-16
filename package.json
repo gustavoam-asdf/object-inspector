@@ -1,19 +1,28 @@
 {
-	"name": "inspect-object",
-	"version": "1.0.0",
-	"description": "",
-	"main": "lib/main.ts",
-	"type": "module",
-	"scripts": {
-		"dev": "ts-node-dev lib/main.ts",
-		"build": "tsc"
-	},
-	"keywords": [],
-	"author": "Gustavo A. <gustavo.atencio@outlook.com>",
-	"license": "MIT",
-	"devDependencies": {
-		"terser": "^5.10.0",
-		"ts-node-dev": "^1.1.8",
-		"typescript": "^4.5.5"
-	}
+  "name": "object-properties",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/main.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "ts-node-dev lib/main.ts",
+    "build": "tsc",
+    "postbuild": "node terser.js"
+  },
+  "keywords": [],
+  "author": "Gustavo A. <gustavo.atencio@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "prettier": "2.5.1",
+    "terser": "5.10.0",
+    "ts-node-dev": "1.1.8",
+    "typescript": "4.5.5"
+  }
 }
