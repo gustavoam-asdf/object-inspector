@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"moduleResolution": "node",
+		"module": "ESNext",
+		"strict": true,
+		"outDir": "build",
+		"esModuleInterop": true,
+		"useDefineForClassFields": true,
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"importHelpers": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmitOnError": true,
+		"rootDir": "./",
+		"baseUrl": "./",
+		"paths": {
+			"@*": ["./lib/*"]
+		}
+	},
+	"include": ["lib"],
+	"exclude": ["node_modules", "build"]
+}
