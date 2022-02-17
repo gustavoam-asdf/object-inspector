@@ -1,5 +1,5 @@
 {
-	"name": "object-inspector",
+	"name": "objinfo",
 	"version": "0.0.1",
 	"main": "lib/main.ts",
 	"scripts": {
@@ -11,7 +11,8 @@
 		"inspector",
 		"inspect",
 		"object",
-		"object-inspector"
+		"object inspector",
+		"object info"
 	],
 	"author": "Gustavo A. <gustavo.atencio@outlook.com>",
 	"license": "MIT",
