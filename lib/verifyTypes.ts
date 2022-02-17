@@ -2,6 +2,10 @@ export function isBoolean(any: any): any is boolean {
 	return typeof any === "boolean"
 }
 
+export function isNull(any: any): any is null {
+	return any === null
+}
+
 export function isFunction(any: any): any is Function {
 	return typeof any === "function"
 }

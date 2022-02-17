@@ -1,38 +1,49 @@
-import { isBoolean, isNumber, isString, isSymbol } from "./verifyTypes"
+import {
+	isBoolean,
+	isFunction,
+	isNull,
+	isNumber,
+	isString,
+	isSymbol,
+	isUndefined
+} from "./verifyTypes"
 
-interface ObjectData {
-	name?: string
-	stringify?: string
+interface PrimitiveTypesData {
 	value: any
 	type: string
 }
-interface ObjectProperty extends ObjectData {
-	description: PropertyDescriptor
+interface FunctionTypeData extends PrimitiveTypesData {
+	name: string
+	stringify: string
 }
 
-interface ObjectSymbol extends ObjectData {}
-
-interface ObjectInspected extends ObjectData {
-	description?: PropertyDescriptor | string
-	properties?: ObjectProperty[]
-	symbols?: ObjectSymbol[]
-}
-
-function inspectObject(any: any): ObjectInspected | void {
-	if (isBoolean(any) || isNumber(any) || isString(any)) {
+function inspectObject(any: any): PrimitiveTypesData | FunctionTypeData {
+	if (
+		isBoolean(any) ||
+		isNull(any) ||
+		isUndefined(any) ||
+		isNumber(any) ||
+		isString(any) ||
+		isSymbol(any)
+	) {
 		return {
 			value: any,
 			type: typeof any
 		}
 	}
 
-	if (isSymbol(any)) {
+	if (isFunction(any)) {
 		return {
-			value: any.valueOf(),
-			description: any.description,
-			stringify: any.toString(),
-			type: typeof any
+			value: any,
+			name: any.name,
+			type: typeof any,
+			stringify: any.toString()
 		}
+	}
+
+	return {
+		value: any,
+		type: typeof any
 	}
 
 	// const propertiesNames = Object.getOwnPropertyNames(any)
@@ -56,13 +67,25 @@ function inspectObject(any: any): ObjectInspected | void {
 
 	// return any
 }
+const data = {
+	arr: [32, 324, 234],
+	data: {
+		name: "John",
+		age: 32,
+		isAdmin: true
+	}
+}
 
-console.log(inspectObject(() => {}))
-
+console.log((data as Object).toString())
+console.dir(data)
 console.log(inspectObject(true))
 console.log(inspectObject(12323))
 console.log(inspectObject("adfasd"))
 console.log(inspectObject(Symbol(123)))
+console.log(inspectObject(undefined))
+console.log(inspectObject(() => {}))
+console.log(inspectObject(isFunction))
+console.log(inspectObject(isBoolean))
 
 console.log(
 	inspectObject({
