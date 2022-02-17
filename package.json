@@ -2,7 +2,6 @@
 	"name": "object-inspector",
 	"version": "0.0.1",
 	"main": "lib/main.ts",
-	"type": "module",
 	"scripts": {
 		"dev": "ts-node-dev lib/main.ts",
 		"build": "tsc",
@@ -29,6 +28,10 @@
 	"directories": {
 		"lib": "lib"
 	},
+	"files": [
+		"lib",
+		"build"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/gustavoam-asdf/object-inspector.git"
