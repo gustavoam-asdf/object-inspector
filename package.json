@@ -7,7 +7,12 @@
 		"build": "tsc",
 		"lint": "eslint lib/*"
 	},
-	"keywords": [],
+	"keywords": [
+		"inspector",
+		"inspect",
+		"object",
+		"object-inspector"
+	],
 	"author": "Gustavo A. <gustavo.atencio@outlook.com>",
 	"license": "MIT",
 	"devDependencies": {
@@ -40,5 +45,5 @@
 		"url": "https://github.com/gustavoam-asdf/object-inspector/issues"
 	},
 	"homepage": "https://github.com/gustavoam-asdf/object-inspector#readme",
-	"description": ""
+	"description": "Library for analyzing the properties of an object"
 }
