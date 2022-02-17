@@ -8,26 +8,26 @@ import {
 	isUndefined
 } from "./verifyTypes/basicTypes"
 
-interface PrimitiveTypesData {
+interface PrimitiveTypeInfo {
 	key?: string | number | symbol
 	value: any
 	type: string
 	description?: string
 }
-interface FunctionTypeData extends PrimitiveTypesData {
+interface FunctionTypeInfo extends PrimitiveTypeInfo {
 	name: string
 	stringify: string
 }
-interface ObjectTypeData extends PrimitiveTypesData {
-	properties: Array<PrimitiveTypesData | FunctionTypeData | ObjectTypeData>
-	symbols: PrimitiveTypesData[]
+interface ObjectTypeInfo extends PrimitiveTypeInfo {
+	properties: Array<PrimitiveTypeInfo | FunctionTypeInfo | ObjectTypeInfo>
+	symbols: PrimitiveTypeInfo[]
 	stringify: string
 	propertyDescription: PropertyDescriptor
 }
 
-export function inspectObject(
-	any: any
-): PrimitiveTypesData | FunctionTypeData | ObjectTypeData {
+type TypeInfo = PrimitiveTypeInfo | FunctionTypeInfo | ObjectTypeInfo
+
+export function inspectObject(any: any): TypeInfo {
 	if (
 		isBoolean(any) ||
 		isNull(any) ||
@@ -36,7 +36,7 @@ export function inspectObject(
 		isString(any) ||
 		isSymbol(any)
 	) {
-		const response: PrimitiveTypesData = {
+		const response: PrimitiveTypeInfo = {
 			value: any,
 			type: typeof any
 		}
