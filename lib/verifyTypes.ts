@@ -1,31 +1,27 @@
-interface TypeChecker<TypeToCheck> {
-	(any: any): TypeToCheck | undefined
+export function isBoolean(any: any): any is boolean {
+	return typeof any === "boolean"
 }
 
-export const isBoolean: TypeChecker<boolean> = any => {
-	return typeof any === "boolean" ? any : undefined
+export function isFunction(any: any): any is Function {
+	return typeof any === "function"
 }
 
-export const isFunction: TypeChecker<Function> = any => {
-	return typeof any === "function" ? any : undefined
+export function isNumber(any: any): any is Number {
+	return typeof any === "number"
 }
 
-export const isNumber: TypeChecker<number> = any => {
-	return typeof any === "number" ? any : undefined
+export function isObject(any: any): any is object {
+	return typeof any === "object"
 }
 
-export const isObject: TypeChecker<Object> = any => {
-	return typeof any === "object" ? any : undefined
+export function isString(any: any): any is string {
+	return typeof any === "string"
 }
 
-export const isString: TypeChecker<string> = any => {
-	return typeof any === "string" ? any : undefined
+export function isSymbol(any: any): any is symbol {
+	return typeof any === "symbol"
 }
 
-export const isSymbol: TypeChecker<symbol> = any => {
-	return typeof any === "symbol" ? any : undefined
-}
-
-export const isUndefined: TypeChecker<undefined> = any => {
-	return typeof any === "undefined" ? any : undefined
+export function isUndefined(any: any): any is undefined {
+	return typeof any === "undefined"
 }
