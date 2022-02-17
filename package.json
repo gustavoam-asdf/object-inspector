@@ -6,8 +6,7 @@
 	"scripts": {
 		"dev": "ts-node-dev lib/main.ts",
 		"build": "tsc",
-		"lint": "eslint lib/*",
-		"postbuild": "node terser.js"
+		"lint": "eslint lib/*"
 	},
 	"keywords": [],
 	"author": "Gustavo A. <gustavo.atencio@outlook.com>",

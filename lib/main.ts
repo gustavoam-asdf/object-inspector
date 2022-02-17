@@ -27,7 +27,7 @@ interface ObjectTypeInfo extends PrimitiveTypeInfo {
 
 type TypeInfo = PrimitiveTypeInfo | FunctionTypeInfo | ObjectTypeInfo
 
-export function inspectObject(any: any): TypeInfo {
+export function objectInspector(any: any): TypeInfo {
 	if (
 		isBoolean(any) ||
 		isNull(any) ||
@@ -61,27 +61,25 @@ export function inspectObject(any: any): TypeInfo {
 	return {
 		value: any,
 		type: typeof any,
-		properties: propertiesNames.map(prop => {
-			return {
-				...inspectObject(any[prop]),
-				key: prop,
-				propertyDescription: Object.getOwnPropertyDescriptor(any, prop)
-			}
-		}),
-		symbols: symbols.map(sym => ({ ...inspectObject(any[sym]), key: sym }))
+		properties: propertiesNames.map(prop => ({
+			...objectInspector(any[prop]),
+			key: prop,
+			propertyDescription: Object.getOwnPropertyDescriptor(any, prop)
+		})),
+		symbols: symbols.map(sym => ({ ...objectInspector(any[sym]), key: sym }))
 	}
 }
 
-console.log(inspectObject(true))
-console.log(inspectObject(12323))
-console.log(inspectObject("adfasd"))
-console.log(inspectObject(Symbol(123)))
-console.log(inspectObject(undefined))
-console.log(inspectObject(() => {}))
-console.log(inspectObject(isFunction))
-console.log(inspectObject(isBoolean))
+console.log(objectInspector(true))
+console.log(objectInspector(12323))
+console.log(objectInspector("adfasd"))
+console.log(objectInspector(Symbol(123)))
+console.log(objectInspector(undefined))
+console.log(objectInspector(() => {}))
+console.log(objectInspector(isFunction))
+console.log(objectInspector(isBoolean))
 
-const obj = inspectObject({
+const obj = objectInspector({
 	prop: "value",
 	[Symbol("asdf")]: "value",
 	[Symbol("testFunction")]: function () {
