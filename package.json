@@ -5,8 +5,25 @@
 	"scripts": {
 		"dev": "ts-node-dev lib/main.ts",
 		"build": "tsc",
-		"lint": "eslint lib/*"
+		"lint": "eslint lib/*",
+		"test": "jest"
 	},
+	"homepage": "https://github.com/gustavoam-asdf/object-inspector#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gustavoam-asdf/object-inspector.git"
+	},
+	"files": [
+		"lib",
+		"build"
+	],
+	"directories": {
+		"lib": "lib"
+	},
+	"bugs": {
+		"url": "https://github.com/gustavoam-asdf/object-inspector/issues"
+	},
+	"description": "Library for analyzing the properties of an object",
 	"keywords": [
 		"inspector",
 		"inspect",
@@ -17,6 +34,7 @@
 	"author": "Gustavo A. <gustavo.atencio@outlook.com>",
 	"license": "MIT",
 	"devDependencies": {
+		"@types/jest": "^27.4.0",
 		"@typescript-eslint/eslint-plugin": "^5.12.0",
 		"@typescript-eslint/parser": "^5.12.0",
 		"eslint": "^7.32.0",
@@ -26,25 +44,21 @@
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-promise": "^5.2.0",
+		"jest": "^27.5.1",
 		"prettier": "2.5.1",
 		"terser": "5.10.0",
+		"ts-jest": "^27.1.3",
 		"ts-node-dev": "1.1.8",
 		"typescript": "4.5.5"
 	},
-	"directories": {
-		"lib": "lib"
-	},
-	"files": [
-		"lib",
-		"build"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/gustavoam-asdf/object-inspector.git"
-	},
-	"bugs": {
-		"url": "https://github.com/gustavoam-asdf/object-inspector/issues"
-	},
-	"homepage": "https://github.com/gustavoam-asdf/object-inspector#readme",
-	"description": "Library for analyzing the properties of an object"
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node",
+		"collectCoverage": true,
+		"coveragePathIgnorePatterns": [
+			"/node_modules/",
+			"/test/",
+			"/build/"
+		]
+	}
 }
