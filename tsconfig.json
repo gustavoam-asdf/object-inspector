@@ -4,6 +4,7 @@
 		"moduleResolution": "node",
 		"module": "CommonJS",
 		"strict": true,
+		"lib": ["ESNext", "DOM"],
 		"rootDir": "./lib",
 		"outDir": "build",
 		"esModuleInterop": true,
