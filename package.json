@@ -1,7 +1,6 @@
 {
-	"name": "object-properties",
-	"version": "1.0.0",
-	"description": "",
+	"name": "object-inspector",
+	"version": "0.0.1",
 	"main": "lib/main.ts",
 	"type": "module",
 	"scripts": {
@@ -27,5 +26,17 @@
 		"terser": "5.10.0",
 		"ts-node-dev": "1.1.8",
 		"typescript": "4.5.5"
-	}
+	},
+	"directories": {
+		"lib": "lib"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gustavoam-asdf/object-inspector.git"
+	},
+	"bugs": {
+		"url": "https://github.com/gustavoam-asdf/object-inspector/issues"
+	},
+	"homepage": "https://github.com/gustavoam-asdf/object-inspector#readme",
+	"description": ""
 }
