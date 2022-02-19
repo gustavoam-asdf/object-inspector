@@ -8,6 +8,38 @@ import {
 	isUndefined
 } from "./typeChecker/basicTypes"
 
+export type PrimitiveType =
+	| boolean
+	| null
+	| undefined
+	| number
+	| string
+	| symbol
+
+export type NonPrimitiveType =
+	| Date
+	| RegExp
+	| Error
+	| Promise<any>
+	| Map<any, any>
+	| Set<any>
+	| WeakMap<any, any>
+	| WeakSet<any>
+	| Array<any>
+	| ArrayLike<any>
+	| typeof Intl
+
+export type BasicType = PrimitiveType | Function | object
+
+export type ExcludePrimitiveType<OmittedType extends PrimitiveType> = Exclude<
+	PrimitiveType,
+	OmittedType
+>
+
+export type ExcludeBasicType<OmittedType extends BasicType> =
+	| ExcludePrimitiveType<OmittedType extends PrimitiveType ? OmittedType : 0>
+	| Exclude<Function | object, OmittedType>
+
 interface PrimitiveTypeInfo {
 	key?: string | number | symbol
 	value: any
