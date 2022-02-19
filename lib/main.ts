@@ -6,7 +6,7 @@ import {
 	isString,
 	isSymbol,
 	isUndefined
-} from "./verifyTypes/basicTypes"
+} from "./typeChecker/basicTypes"
 
 interface PrimitiveTypeInfo {
 	key?: string | number | symbol

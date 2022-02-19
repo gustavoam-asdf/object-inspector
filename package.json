@@ -6,6 +6,7 @@
 		"dev": "ts-node-dev lib/main.ts",
 		"build": "tsc",
 		"lint": "eslint lib/*",
+		"pretest": "clear || cls",
 		"test": "jest"
 	},
 	"homepage": "https://github.com/gustavoam-asdf/object-inspector#readme",
@@ -55,10 +56,10 @@
 		"preset": "ts-jest",
 		"testEnvironment": "node",
 		"collectCoverage": true,
-		"coveragePathIgnorePatterns": [
-			"/node_modules/",
-			"/test/",
-			"/build/"
+		"testPathIgnorePatterns": [
+			"node_modules",
+			"coverage",
+			"build"
 		]
 	}
 }

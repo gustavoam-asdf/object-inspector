@@ -1,6 +1,6 @@
 import { objectInspector } from "./main"
 
-describe("Information on a basic type variable", () => {
+describe("Information on a primitive type variable", () => {
 	test("boolean", () => {
 		const value = true
 		const expected = { value, type: "boolean" }

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for lib/verifyTypes/basicTypes.ts</title>
+    <title>Code coverage report for lib/typeChecker/basicTypes.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">lib/verifyTypes</a> basicTypes.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">lib/typeChecker</a> basicTypes.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -99,11 +99,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -111,19 +115,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function isBoolean(any: any): any is boolean {
 	return typeof any === "boolean"
@@ -133,16 +133,12 @@ export function isNull(any: any): any is null {
 	return any === null
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >isFunction(</span>any: any): any is Function {
-<span class="cstat-no" title="statement not covered" >	return typeof any === "function"</span>
+export function isUndefined(any: any): any is undefined {
+	return typeof any === "undefined"
 }
 &nbsp;
 export function isNumber(any: any): any is Number {
 	return typeof any === "number"
-}
-&nbsp;
-export function <span class="fstat-no" title="function not covered" >isObject(</span>any: any): any is object {
-<span class="cstat-no" title="statement not covered" >	return typeof any === "object"</span>
 }
 &nbsp;
 export function isString(any: any): any is string {
@@ -153,8 +149,12 @@ export function isSymbol(any: any): any is symbol {
 	return typeof any === "symbol"
 }
 &nbsp;
-export function isUndefined(any: any): any is undefined {
-	return typeof any === "undefined"
+export function isFunction(any: any): any is Function {
+	return typeof any === "function"
+}
+&nbsp;
+export function isObject(any: any): any is object {
+	return typeof any === "object"
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -163,7 +163,7 @@ export function isUndefined(any: any): any is undefined {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Feb 18 2022 21:32:24 GMT-0500 (hora estándar de Colombia)
+                at Fri Feb 18 2022 21:56:37 GMT-0500 (hora estándar de Colombia)
             </div>
         <script src="../../prettify.js"></script>
         <script>
